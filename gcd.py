@@ -20,15 +20,18 @@ import time
 
 
 def GCD(m, n): 
-start = time.time()  
+  
    while(n): 
        m, n = n, m % n 
-end = time.time() 
    return m 
   
 a = input("Enter first value: ")
 b= input("Enter first value: ")
 
+start = time.time()
 g = GCD(int(a),int(b))  
+end = time.time() 
+
 print ("The gcd of {} and {} is : {} ".format(a,b,g)) 
+print(end)
  
