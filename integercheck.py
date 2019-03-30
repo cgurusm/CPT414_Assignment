@@ -1,44 +1,24 @@
-# public class ConsecutiveIntegerChecking {
-#   static int GCD(int m, int n) {
-#     int t = n;
-#     if (m < n)
-#       t = m;
-#     while (t > 1) {
-#       if (m % t == 0 && n % t == 0)
-#         return t;
-#       t--;
-#     }
-#     return 1;
-#   }
-# }
+# An algorithm to determine the gcd of two numbers using Consecutive Integer Checking method
+# Input: Non negative integers 
+# Return Value : absolute/positive integer 
+import timeit
+
+def cic(m,n):
+    t = n
+    if m < n:
+        t = n
+    while (t > 1):
+        if((m % t == 0) & (n % t == 0)):
+            return t
+        t = t - 1
+    return 1
 
 
-
-
-
-# def gcd(a,b):
-#     if (a>b):
-#         r1=a
-#         r2=b
-#     else:
-#         r1=b
-#         r2=a   
-#     if(r1%r2==0):
-#         print (r2)
-#     else:
-#         gcd(r2, r1%r2)
-# a= int(input("Enter a number"))
-# b= int(input("Enter a number"))
-# gcd(a,b)
-
-
-m = int(input("Enter First value"))
-n = int(input("Enter Second value"))
-t = min(m, n)
-while(t > 0):
-    if((m % t == 0) & (n % t == 0)):
-        pass
-        # return t
-    t = t - 1
-
-print(t)
+a = int(input("Enter First value: "))
+b = int(input("Enter Second value: "))
+for i in range(5):
+    t  = timeit.Timer(lambda: cic(a, b))
+    a = a + 20
+    b = b + 20
+    print('the GCD values for %s and %s is %s' % (a, b, cic(a,b)))
+    print(t.timeit())
