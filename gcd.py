@@ -11,9 +11,15 @@ def GCD(m, n):
   
 a = int(input("Enter First value: "))
 b = int(input("Enter Second value: "))
-for i in range(20):
+
+for i in range(2):
+    # def GCD(m, n):
+    #     while(n):
+    #         m, n = n, m % n
+    #     return m
     t  = timeit.Timer(lambda: GCD(a, b))
+    print('the GCD values for %s and %s is %s' % (a, b, GCD(a,b)))
     a = a + 20
     b = b + 20
-    print('the GCD values for %s and %s is %s' % (a, b, GCD(a,b)))
+
     print(t.timeit())
