@@ -3,6 +3,7 @@
 # Return Value : absolute/positive integer 
 import timeit
 
+# Basic operation
 def cic(m,n):
     t = n
     if m < n:
@@ -13,9 +14,10 @@ def cic(m,n):
         t = t - 1
     return 1
 
-
+# Inputing user input
 a = int(input("Enter First value: "))
 b = int(input("Enter Second value: "))
+# Looping through and incrementing inputed values
 for i in range(5):
     t  = timeit.Timer(lambda: cic(a, b))
     a = a + 20
