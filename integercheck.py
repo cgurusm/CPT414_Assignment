@@ -20,7 +20,7 @@ b = int(input("Enter Second value: "))
 # Looping through and incrementing inputed values
 for i in range(5):
     t  = timeit.Timer(lambda: cic(a, b))
+    print('the GCD values for %s and %s is %s' % (a, b, cic(a,b)))
     a = a + 20
     b = b + 20
-    print('the GCD values for %s and %s is %s' % (a, b, cic(a,b)))
     print(t.timeit())
